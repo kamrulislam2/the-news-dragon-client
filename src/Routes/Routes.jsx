@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Navigate to="/category/0"></Navigate>,
-        // loader: () => fetch("http://localhost:5000/news"),
+        // loader: () => fetch("https://the-news-dragon-server-kamrulislam2.vercel.app/news"),
       },
       {
         path: "/login",
@@ -41,7 +41,9 @@ const router = createBrowserRouter([
         path: ":id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categories/${params.id}`),
+          fetch(
+            `https://the-news-dragon-server-kamrulislam2.vercel.app/categories/${params.id}`
+          ),
       },
     ],
   },
@@ -57,7 +59,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/news/${params.id}`),
+          fetch(
+            `https://the-news-dragon-server-kamrulislam2.vercel.app/news/${params.id}`
+          ),
       },
     ],
   },
